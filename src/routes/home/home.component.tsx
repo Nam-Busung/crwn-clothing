@@ -1,7 +1,8 @@
-import Directory from "./components/directory/directory.component";
+import { Outlet } from "react-router-dom";
+import Directory from "../../components/directory/directory.component";
 
-const App = () => {
-  const categories = [
+const Home: React.FC = () => {
+  const categories: category[] = [
     {
       id: 1,
       title: "hats",
@@ -29,7 +30,12 @@ const App = () => {
     },
   ];
 
-  return <Directory categories={categories} />;
+  return (
+    <div>
+      <Directory categories={categories} />
+      <Outlet />
+    </div>
+  );
 };
 
-export default App;
+export default Home;
